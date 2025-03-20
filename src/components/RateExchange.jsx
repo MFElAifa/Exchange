@@ -59,11 +59,12 @@ export default function RateExchange() {
 
   return (
     <div>
-       <div className="row g-3 align-items-center">
-            <div className="col-auto">
-                <label className="col-form-label">Rate :</label>
+        <hr />
+        <div className="row g-4 align-items-center">
+            <div className="col-md-3">
+                <label className="col-form-label fs-1">Rate :</label>
             </div>
-            <div className="col-auto">
+            <div className="col-md-3">
                 <input
                     type="text"
                     value={rateValue}
@@ -73,27 +74,25 @@ export default function RateExchange() {
                 />
             </div>
             
-            <div className="col-auto">
-                <div className="form-check">
-                    <input 
-                        type="checkbox" 
-                        checked={fixRate} 
-                        onChange={fixedRate} 
-                        className="form-check-input"
-                    />
-                        <label className="form-check-label">
-                            Fix
-                        </label>
+            <div className="col-md-3">
+                <div className="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                        <input 
+                            type="checkbox" 
+                            checked={fixRate} 
+                            onChange={fixedRate}
+                            className="btn-check" id="btncheck1" autoComplete="off" />
+                            <label className="btn btn-outline-primary" htmlFor="btncheck1">Fix</label>
+
+                        
                 </div>
             </div>
-      </div>
-      <div className="row g-4 mt-3 mb-3">
-        <div className="col-auto d-flex justify-content-center">
-            <button  className="btn btn-outline-primary" onClick={switchDevises}>
-                {deviseInput} &nbsp;<img src={switchSvg} alt="Switch" />&nbsp;{deviseOutput}
-            </button>
+      
+            <div className="col-md-3">
+                <button  className="btn btn-outline-primary" onClick={switchDevises}>
+                    {deviseInput} &nbsp;<img src={switchSvg} alt="Switch" />&nbsp;{deviseOutput}
+                </button>
+            </div>
         </div>
-      </div>
       <AmountExchange
         rate={rateValue}
         newRate={fixRate ? rateValue : null}

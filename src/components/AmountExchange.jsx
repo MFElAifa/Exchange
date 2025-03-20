@@ -44,10 +44,10 @@ export default function AmountExchange({rate, newRate, deviseInput, deviseOutput
   return (
     <div>
         <div className="row g-4 align-items-center">
-          <div className="col-auto">
-            <label  className="col-form-label">Amount:</label>
+          <div className="col-md-3">
+            <label  className="col-form-label fs-1">Amount:</label>
           </div>
-          <div className="col-auto">
+          <div className="col-md-3">
             <input type="text"
               value={amount}
               onChange={amountChange}
@@ -56,12 +56,15 @@ export default function AmountExchange({rate, newRate, deviseInput, deviseOutput
             />
           </div>
           <div className="col-auto">
-            <span className="form-text">
+            <span className="form-text fs-2">
               {deviseInput}
             </span>
           </div>
+        </div>
+        <div className="row g-4 align-items-center">
+          <div className="col-4"></div>
           <div className="col-auto">
-            <label className="col-form-label">{amountConverted} &nbsp;{deviseOutput}</label>
+            <label className="col-form-label fs-2">{amountConverted} &nbsp;{deviseOutput}</label>
           </div>
         </div>
         
