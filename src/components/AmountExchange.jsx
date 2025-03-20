@@ -32,6 +32,8 @@ export default function AmountExchange({rate, newRate, deviseInput, deviseOutput
     if(amount>0){
       setAmountConverted(parseFloat(amount*rate).toFixed(2));
       addOperation(parseFloat(amount*rate).toFixed(2));
+    } else {
+      setAmountConverted(0);
     }
   }
 
