@@ -35,6 +35,11 @@ export default function AmountExchange({rate, newRate, deviseInput, deviseOutput
     }
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      converterAmount();
+    }
+  };
   
   useEffect(() => {
     converterAmount();
@@ -52,6 +57,7 @@ export default function AmountExchange({rate, newRate, deviseInput, deviseOutput
               value={amount}
               onChange={amountChange}
               onBlur={converterAmount}
+              onKeyDown={handleKeyDown}
               className="form-control" 
             />
           </div>
